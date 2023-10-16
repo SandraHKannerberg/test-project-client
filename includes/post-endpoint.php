@@ -55,4 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //If user tries to enter post-endpoint.php without a POST request, make them stay in the frontpage
     header('Location: ../index.php');
 }
+
+
 ?>

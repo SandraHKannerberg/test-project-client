@@ -1,10 +1,13 @@
 <h2>Existing users</h2>
-<table>
+
+<table class="table">
+  <thead>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Country</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Country</th>
     </tr>
+  </thead>
 
     <?php
     //Connect to database
@@ -25,6 +28,7 @@
     //Loop all users and give each user one line
     if ($users->num_rows > 0) {
         while ($row = $users->fetch_assoc()) {
+            echo '<tbody>';
             echo '<tr>';
             echo '<td>' . $row['id'] . '</td>';
             echo '<td>' . $row['name'] . '</td>';
@@ -34,6 +38,7 @@
             echo '<button type="button" class="btn btn-danger">Delete</button>';
             echo '</td>';
             echo '</tr>';
+            echo '</tbody>';
         }
     } else {
         echo '<tr><td colspan="3">No users found in the database</td></tr>';

@@ -12,11 +12,14 @@
 
     <?php include('header.php'); ?>
   
-    <main class='wrapper-frontpage'>
+    <main class='wrapper-frontpage container-fluid'>
 
         <div class="container">
-            <h1>Welcome to my <span class="uppercase">Test Assignment</span> project</h1>
-            <h4>New user? Please add your name and country below</h4>
+
+            <div class="text-container">
+                <h1>Welcome to my <span class="uppercase">Test Assignment</span> project</h1>
+                <h5>New user? Please add your name and country below</h5>
+            </div>
         
             <form class='add-new-user-form' method='post' action='includes/post-endpoint.php'>
                 <label for='name'>Name?</label>

@@ -16,48 +16,53 @@ body {
     background-color: #94B49F;
 }
 
-header {
-    height: 10vh;
-    width: 100%;
+.my-header {
+    color: #FCF8E8;
+    background-color: #94B49F;
+    height: 8rem;
     border-bottom: 2px solid #FCF8E8;
+    padding: 0.5rem 5rem 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0.5rem 5rem 0.5rem;
 }
 
-.menu {
-    width: 15%;
-}
-
-ul {
+.my-navbar {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+
 }
 
 li {
     list-style: none;
 }
 
-a {
+.nav-link {
     text-decoration: none;
     text-transform: uppercase;
     color: #FCF8E8;
     font-weight: bold;
     font-size: 20px;
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
 }
 
-a:hover {
-    color: #ECB390;
+.nav-link:hover {
+    color: #ECB390 !important;
 }
 
 .uppercase {
     text-transform: uppercase;
 }
 
+.navbar-toggler-icon {
+    color: #FCF8E8 !important;
+}
+
 .wrapper-frontpage {
-    width: 50vw;
-    height: 75vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +78,10 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 1rem;
+}
+
+.text-container {
+    text-align: center;
 }
 
 .add-new-user-form {
