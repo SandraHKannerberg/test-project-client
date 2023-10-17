@@ -11,7 +11,7 @@ body {
     color: #FCF8E8;
     background-color: #94B49F;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* HEADER AND NAVBAR */
@@ -139,8 +139,6 @@ label {
 
 /* FOOTER */
 footer {
-    position: fixed;
-    bottom: 0;
     padding: 10px 0;
 }
 

@@ -1,0 +1,36 @@
+.my-userlist-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+
+.table {
+    background-color: #FCF8E8;
+    color: black;
+}
+
+/* Table heading area*/
+thead {
+    height: 3rem;
+    background-color: #DF7861;;
+    color: #FCF8E8;
+    font-size: 16px;
+}
+
+
+.users-container{
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* .my-edit-btn {
+    margin-bottom: 3rem;
+}
+
+.my-del-btn{
+    margin-bottom: 3rem;
+} */
+
