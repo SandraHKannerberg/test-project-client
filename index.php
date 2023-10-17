@@ -21,12 +21,12 @@
                     <span class="my-texttransform">Test Assignment</span>
                 </div>
             </div>
-        
-            <div class="my-form col-8">
-                <div class="text-center col-8">
-                    <h6>New user? Please add your name and country below</h6>
-                </div>
-                <br>
+
+            <div class="text-center col-12">
+                <h6>New user? Please add your name and country below</h6>
+            </div>
+              
+            <div class="my-form col-12 col-sm-8 col-md-6 col-lg-4">
                 <form method="post" action="includes/post-endpoint.php">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
