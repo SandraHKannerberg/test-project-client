@@ -26,17 +26,7 @@ body {
 .my-header-wrapper {
     width: 85vw;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.my-title-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0;
+    justify-content: flex-end;
 }
 
 .my-menu-wrapper {
@@ -49,6 +39,7 @@ body {
 .my-menu {
     display: flex;
     justify-content: space-between;
+    gap: 3rem;
     padding: 0;
     margin: 0;
 }

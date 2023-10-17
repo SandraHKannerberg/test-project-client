@@ -21,8 +21,8 @@
                 </div>
             </div>
         
-            <div class="my-form col-5">
-                <div class="text-center">
+            <div class="my-form col-8">
+                <div class="text-center col-8">
                     <h6>New user? Please add your name and country below</h6>
                 </div>
                 <br>
@@ -31,6 +31,7 @@
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="my-input form-control" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
                     </div>
+
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
                         <input type="text" id="country" name="country" class="my-input form-control"  <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
@@ -41,20 +42,20 @@
             </div>
 
             <?php
-            //Div for error or success messages
+                //Div for error or success messages
                 session_start();
 
-                if (isset($_SESSION['success_message'])) {
-                    echo '<br>';
-                    echo '<div class="success">' . $_SESSION['success_message'] . '</div>';
+                if (isset($_SESSION["success_message"])) {
+                    echo "<br>";
+                    echo "<div class='success'>" . $_SESSION["success_message"] . "</div>";
                     unset($_SESSION['success_message']);
                 }
 
-                if (isset($_SESSION['error_message'])) {
-                    echo '<br>';
-                    echo '<div class="error">' . $_SESSION['error_message'] . '</div>';
-                    unset($_SESSION['error_message']);
-                    }
+                if (isset($_SESSION["error_message"])) {
+                    echo "<br>";
+                    echo "<div class='error'>" . $_SESSION["error_message"] . "</div>";
+                    unset($_SESSION["error_message"]);
+                }
             ?>
         </div>
     </main>
