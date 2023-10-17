@@ -12,15 +12,18 @@
 
     <?php include('header.php'); ?>
   
-    <main class='wrapper-frontpage container-fluid'>
+    <main class='container-fluid'>
 
-        <div class="container">
+        <div class="container text-center">
 
-            <div class="text-container">
-                <h1>Welcome to my <span class="uppercase">Test Assignment</span> project</h1>
-                <h5>New user? Please add your name and country below</h5>
+            <div class="row">
+                <div class="col-8">
+                    <h1>Welcome to my <span class="my-texttransform">Test Assignment</span> project</h1>
+                    <h5>New user? Please add your name and country below</h5>
+                </div>
             </div>
         
+            <div class="row">
             <form class='add-new-user-form' method='post' action='includes/post-endpoint.php'>
                 <label for='name'>Name?</label>
                 <input type='text' id='name' name='name' placeholder='Enter your name...' <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
@@ -32,7 +35,7 @@
 
                 <button type='submit' class='submit-btn'>Submit</button>
             </form>
-
+            </div>
             <?php
                 session_start();
 
