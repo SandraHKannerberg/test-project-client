@@ -17,7 +17,8 @@
         <div class="my-form-wrapper container">
             <div class="row text-center">
                 <div class="my-text-wrapper col">
-                    <h1>Welcome to my <span class="my-texttransform">Test Assignment</span></h1>
+                    <h1>Welcome to my</h1>
+                    <span class="my-texttransform">Test Assignment</span>
                 </div>
             </div>
         
