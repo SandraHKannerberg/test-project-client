@@ -81,3 +81,7 @@ footer {
     bottom: 0;
     padding: 10px 0;
 }
+
+.my-footer-text {
+    font-size: 12px;
+}
