@@ -16,7 +16,8 @@
     <?php include("header.php"); ?>
 
     <main class="my-userlist-wrapper container-fluid">
-        <div class="users-container row">
+        <div class="my-table-wrapper col-sm-10 col-md-8 col-lg-6">
+            <h2 class="text-center">Existing users</h2>
             <?php include("includes/userList.php"); ?>
         </div>
     </main>
