@@ -1,11 +1,10 @@
 <?php
-if (isset($_POST['userId'])) {
+if (isset($_POST["id"])) {
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-    $userId = $_POST['userId'];
+$userId = $_POST["id"];
+
 //URL to Quarkus DELETE endpoint
-$deleteEndpoint = 'http://localhost:8080/users/' . $userId;
+$deleteEndpoint = "http://localhost:8080/users/" . $userId;
 
 //Create a curl-resurs
 $ch = curl_init();
@@ -20,9 +19,9 @@ $response = curl_exec($ch);
 
 //Check if the request was successfull
 if ($response === false) {
-    echo 'Failed to delete the user: ' . curl_error($ch);
+    echo "Failed to delete the user: " . curl_error($ch);
 } else {
-    echo 'The user is now successfully deleted. Server answer: ' . $response;
+    echo "The user with id " . $userId . " is now deleted.";
 }
 
 //Close curl

@@ -20,8 +20,36 @@ document.querySelector("tbody").addEventListener("click", function (event) {
         const userId = event.target.getAttribute("data-id");
         console.log("Radera användare med ID: " + userId);
     
-        // Placera din raderingslogik här, t.ex. AJAX-anrop till en server
+        //Call the delete function
+        deleteUser(userId);
     }
 });
 
+//Function to delete a user by id
+function deleteUser(userId) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'includes/delete-endpoint.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
+    //Make a string of the users id
+    const data = 'id=' + userId;
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            // Snygga till detta - enbart basic test nu!!!!
+            alert(xhr.responseText);
+
+       //Reload page to get the updated userlist
+       refreshPage();
+        }
+    };
+
+    //Send POST-request
+    xhr.send(data);
+}
+
+//Function to reload the page
+function refreshPage() {
+    location.reload();
+}

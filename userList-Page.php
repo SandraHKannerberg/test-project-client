@@ -16,7 +16,7 @@
 
     <?php include("includes/header.php"); ?>
 
-    <main class="my-userlist-wrapper container-fluid">
+    <main class="my-userlist-wrapper container-fluid" id="my-userlist">
         <div class="my-table-wrapper col-sm-10 col-md-8 col-lg-6">
             <h2 class="text-center">List of users</h2>
             <?php include("includes/get-userlist.php"); ?>

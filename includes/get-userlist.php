@@ -23,14 +23,19 @@
     if ($users->num_rows > 0) {
         while ($row = $users->fetch_assoc()) {
             echo "<tr>";
+            //User details
             echo "<td class='my-table-content-center'>" . $row["id"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["country"] . "</td>";
+
+            //Edit button
             echo "<td class='text-center'>";
             echo "<button type='button' class='btn btn-dark'>";
             echo "<i class='fa-solid fa-pen-to-square'></i>";
             echo "</button>";
             echo "</td>";
+            
+            //Delete button
             echo "<td class='text-center'>";
             echo "<button type='button' class='btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
             echo "<i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i>";
