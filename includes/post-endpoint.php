@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo $response;
         //Success
-        $_SESSION['success_message'] = "Congratulations! You are now added as a user! <br> Name: $name, Country: $country";
+        $_SESSION['success_message'] = "Congratulations! You are now added as a user!";
  
         //We send the user back to the frontpage
         header('Location: ../index.php');
@@ -55,4 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //If user tries to enter post-endpoint.php without a POST request, make them stay in the frontpage
     header('Location: ../index.php');
 }
+
+
 ?>
