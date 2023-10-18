@@ -11,3 +11,17 @@ setTimeout(function() {
     if (successMessage) {
         successMessage.style.display = "none";
 }}, 8000);
+
+
+//Eventlistener delete-button
+document.querySelector("tbody").addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-button")) {
+        // Hämta användarens ID från data-id-attributet
+        const userId = event.target.getAttribute("data-id");
+        console.log("Radera användare med ID: " + userId);
+    
+        // Placera din raderingslogik här, t.ex. AJAX-anrop till en server
+    }
+});
+
+

@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/user.css">
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
     <title>Users</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
     <main class="my-userlist-wrapper container-fluid">
         <div class="my-table-wrapper col-sm-10 col-md-8 col-lg-6">
             <h2 class="text-center">List of users</h2>
-            <?php include("includes/get-userlist-script.php"); ?>
+            <?php include("includes/get-userlist.php"); ?>
         </div>
     </main>
 

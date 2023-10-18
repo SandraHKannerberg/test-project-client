@@ -27,10 +27,14 @@
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["country"] . "</td>";
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-dark'><i class='fa-solid fa-pen-to-square'></i></button>";
+            echo "<button type='button' class='btn btn-dark'>";
+            echo "<i class='fa-solid fa-pen-to-square'></i>";
+            echo "</button>";
             echo "</td>";
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-danger'><i class='fa-solid fa-trash'></i></button>";
+            echo "<button type='button' class='btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
+            echo "<i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i>";
+            echo "</button>";
             echo "</td>";
             echo "</tr>";
         }
@@ -40,5 +44,6 @@
 
     $conn->close();
     ?>
-    </tbody>
+
+  </tbody>
 </table>
