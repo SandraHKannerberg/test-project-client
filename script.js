@@ -18,42 +18,50 @@ document.querySelector("tbody").addEventListener("click", function (event) {
     if (event.target.classList.contains("delete-button")) {
         // Hämta användarens ID från data-id-attributet
         const userId = event.target.getAttribute("data-id");
-        console.log("Radera användare med ID: " + userId);
-    
+   
         //Call the delete function
         deleteUser(userId);
     }
 });
 
+// Eventlistener Cancel-button in modal
+document.getElementById("cancelDeleteButton").addEventListener("click", function() {
+    //Hide modal
+    $('#deleteConfirmationModal').modal('hide');
+});
+
 //Function to delete a user by id
 function deleteUser(userId) {
-    // Visa raderingsbekräftelse-modal
+
+    //Show confirmation modal
     $('#deleteConfirmationModal').modal('show');
 
-    // Hantera klick på "Radera" i modalen
-    $('#confirmDeleteButton').click(function() {
-        // Dölj modalen
-        $('#deleteConfirmationModal').modal('hide');
+    //Handle click in modal
+    $('#confirmDeleteButton').off("click").on("click", function() {
 
-        // Här kan du göra DELETE-förfrågan till servern
+    //Hide modal
+    $('#deleteConfirmationModal').modal('hide');
+
+        //DELETE-request to the server
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "includes/delete-endpoint.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-        // Gör en sträng av användarens id
+        //String - users id
         const data = "id=" + userId;
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
+
                 // Snygga till detta - enbart basic test nu!!!!
                 alert(xhr.responseText);
 
-                // Ladda om sidan för att få den uppdaterade användarlistan
+                //Reload page after delete
                 refreshPage();
             }
         };
 
-        // Skicka POST-förfrågan
+        //Send POST-request
         xhr.send(data);
     });
 }
