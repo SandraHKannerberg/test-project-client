@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo $response;
         //Success
-        $_SESSION['success_message'] = "Congratulations! You are now added as a user! <br> Name: $name, Country: $country";
+        $_SESSION['success_message'] = "Congratulations! You are now added as a user!";
  
         //We send the user back to the frontpage
         header('Location: ../index.php');

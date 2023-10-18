@@ -7,13 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Link to my CSS-file -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>My test assignment</title>
 </head>
 <body>
 
-    <?php include('header.php'); ?>
+    <?php include("includes/header.php"); ?>
   
-    <main class='container-fluid'>
+    <main class="container-fluid">
         <div class="my-form-wrapper container">
             <div class="row text-center">
                 <div class="my-text-wrapper col">
@@ -48,20 +49,20 @@
 
                 if (isset($_SESSION["success_message"])) {
                     echo "<br>";
-                    echo "<div class='success'>" . $_SESSION["success_message"] . "</div>";
+                    echo "<div class='alert alert-success' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
                     unset($_SESSION['success_message']);
                 }
 
                 if (isset($_SESSION["error_message"])) {
                     echo "<br>";
-                    echo "<div class='error'>" . $_SESSION["error_message"] . "</div>";
+                    echo "<div class='alert alert-danger' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
                     unset($_SESSION["error_message"]);
                 }
             ?>
         </div>
     </main>
 
-    <?php include('footer.php'); ?>
+    <?php include("includes/footer.php"); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
