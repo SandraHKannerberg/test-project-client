@@ -27,26 +27,35 @@ document.querySelector("tbody").addEventListener("click", function (event) {
 
 //Function to delete a user by id
 function deleteUser(userId) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'includes/delete-endpoint.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Visa raderingsbekräftelse-modal
+    $('#deleteConfirmationModal').modal('show');
 
-    //Make a string of the users id
-    const data = 'id=' + userId;
+    // Hantera klick på "Radera" i modalen
+    $('#confirmDeleteButton').click(function() {
+        // Dölj modalen
+        $('#deleteConfirmationModal').modal('hide');
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+        // Här kan du göra DELETE-förfrågan till servern
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "includes/delete-endpoint.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-            // Snygga till detta - enbart basic test nu!!!!
-            alert(xhr.responseText);
+        // Gör en sträng av användarens id
+        const data = "id=" + userId;
 
-       //Reload page to get the updated userlist
-       refreshPage();
-        }
-    };
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Snygga till detta - enbart basic test nu!!!!
+                alert(xhr.responseText);
 
-    //Send POST-request
-    xhr.send(data);
+                // Ladda om sidan för att få den uppdaterade användarlistan
+                refreshPage();
+            }
+        };
+
+        // Skicka POST-förfrågan
+        xhr.send(data);
+    });
 }
 
 //Function to reload the page

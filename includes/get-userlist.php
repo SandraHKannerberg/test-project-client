@@ -30,14 +30,14 @@
 
             //Edit button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-dark'>";
+            echo "<button type='button' class='my-btn btn btn-dark'>";
             echo "<i class='fa-solid fa-pen-to-square'></i>";
             echo "</button>";
             echo "</td>";
-            
+
             //Delete button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
+            echo "<button type='button' class='my-btn btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
             echo "<i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i>";
             echo "</button>";
             echo "</td>";
