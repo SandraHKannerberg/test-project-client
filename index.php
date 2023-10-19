@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Link to my CSS-file -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Icons Font Awesome -->
+    <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
+    <!-- My JS script -->
     <script src="script.js" defer></script>
     <title>My test assignment</title>
 </head>
@@ -31,15 +34,15 @@
                 <form method="post" action="includes/post-endpoint.php">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="my-input form-control" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
+                        <input type="text" id="name" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
                     </div>
 
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" id="country" name="country" class="my-input form-control"  <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
+                        <input type="text" id="country" name="country" class="my-input form-control shadow-sm"  <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
                     </div>
 
-                    <button type="submit" class="my-submit-btn btn">Submit</button>
+                    <button type="submit" class="my-submit-btn btn shadow">Submit</button>
                 </form>
             </div>
 
@@ -49,13 +52,13 @@
 
                 if (isset($_SESSION["success_message"])) {
                     echo "<br>";
-                    echo "<div class='alert alert-success' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
+                    echo "<div class='my-success-alert alert alert-success' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
                     unset($_SESSION['success_message']);
                 }
 
                 if (isset($_SESSION["error_message"])) {
                     echo "<br>";
-                    echo "<div class='alert alert-danger' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
+                    echo "<div class='my-error-alert alert alert-danger' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
                     unset($_SESSION["error_message"]);
                 }
             ?>

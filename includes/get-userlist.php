@@ -1,4 +1,4 @@
-<table class="table table-success table-striped table-hover align-middle">
+<table class="table table-success table-striped table-hover align-middle shadow-sm rounded">
   <thead class="table-dark">
     <tr>
       <th scope="col" class="my-table-content-center">ID</th>

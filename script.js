@@ -3,7 +3,7 @@ setTimeout(function() {
     var errorMessage = document.getElementById("error_message");
     if (errorMessage) {
         errorMessage.style.display = "none";
-}}, 5000);
+}}, 8000);
 
 // Set a timer to hide the success message after 8 seconds
 setTimeout(function() {
@@ -54,10 +54,15 @@ function deleteUser(userId) {
             if (xhr.readyState === 4 && xhr.status === 200) {
 
                 // Snygga till detta - enbart basic test nu!!!!
-                alert(xhr.responseText);
+                //alert(xhr.responseText);
+
+                // $('#deleteAfterConfirmationModal').modal('show');
+                //showConfirmationToast();
 
                 //Reload page after delete
                 refreshPage();
+
+                showConfirmationToast();
             }
         };
 
@@ -69,4 +74,10 @@ function deleteUser(userId) {
 //Function to reload the page
 function refreshPage() {
     location.reload();
+}
+
+// Visa toast-meddelande
+function showConfirmationToast() {
+    var toast = new bootstrap.Toast(document.getElementById('confirmationToast'));
+    toast.show();
 }
