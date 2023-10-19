@@ -12,7 +12,7 @@
 
     <?php
     //Connect to database
-    include("includes/config.php");
+    include("includes/database/config.php");
 
     //Get all users
     $sql = "SELECT * FROM user_table";
