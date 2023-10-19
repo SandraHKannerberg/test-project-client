@@ -11,7 +11,7 @@
     <!-- Icons Font Awesome -->
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
     <!-- My JS script -->
-    <script src="script.js" defer></script>
+    <script src="users-script.js" defer></script>
     <title>Users</title>
 </head>
 <body>
@@ -38,29 +38,17 @@
         </div>
     </div>
 
-<!-- Modal - Confirmation after deletion -->
-<!-- <div class="modal fade" id="deleteAfterConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteAfterConfirmationModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteAfterConfirmationModalLabel">User Deleted</h5>
-            </div>
-            <div class="modal-body">
-                The user has been successfully deleted.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
     <main class="my-userlist-wrapper container-fluid" id="my-userlist">
 
-        <!-- Alert after delete -->
-        <div class="my-success-alert alert alert-success text-center shadow-sm col-sm-10 col-md-8 col-lg-6" id="successAlert" role="alert">
-            <i class="fa-solid fa-check"></i> The user is deleted
-        </div>
+        <?php
+            //Div - Alert completed
+            session_start();
+
+                if (isset($_SESSION["completed_message"])) {
+                    echo "<div class='my-success-alert alert alert-success' role='alert' id='completed_message'>" . $_SESSION["completed_message"] . "</div>";
+                    unset($_SESSION['completed_message']);
+                }
+        ?>
 
         <!-- Table - Render list of users -->
         <div class="my-table-wrapper col-sm-10 col-md-8 col-lg-6">

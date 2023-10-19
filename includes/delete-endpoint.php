@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST["id"])) {
 
 $userId = $_POST["id"];
@@ -22,6 +23,7 @@ if ($response === false) {
     echo "Failed to delete the user: " . curl_error($ch);
 } else {
     echo "The user with id " . $userId . " is now deleted.";
+    $_SESSION['completed_message'] = "<i class='fa-solid fa-check'></i> User with id " . $userId . " is deleted.";
 }
 
 //Close curl
