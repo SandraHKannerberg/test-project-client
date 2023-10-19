@@ -1,4 +1,4 @@
-<table class="table table-success table-striped table-hover align-middle">
+<table class="table table-success table-striped table-hover align-middle shadow-sm rounded">
   <thead class="table-dark">
     <tr>
       <th scope="col" class="my-table-content-center">ID</th>
@@ -23,14 +23,23 @@
     if ($users->num_rows > 0) {
         while ($row = $users->fetch_assoc()) {
             echo "<tr>";
+            //User details
             echo "<td class='my-table-content-center'>" . $row["id"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["country"] . "</td>";
+
+            //Edit button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-dark'><i class='fa-solid fa-pen-to-square'></i></button>";
+            echo "<button type='button' class='my-btn btn btn-dark'>";
+            echo "<i class='fa-solid fa-pen-to-square'></i>";
+            echo "</button>";
             echo "</td>";
+
+            //Delete button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='btn btn-danger'><i class='fa-solid fa-trash'></i></button>";
+            echo "<button type='button' class='my-btn btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
+            echo "<i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i>";
+            echo "</button>";
             echo "</td>";
             echo "</tr>";
         }
@@ -40,5 +49,6 @@
 
     $conn->close();
     ?>
-    </tbody>
+
+  </tbody>
 </table>

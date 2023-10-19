@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($name) || empty($country)) {
 
         //Error-message sent to index.php 
-         $_SESSION['error_message'] = "*Enter both your name and country before Submit";
+        $_SESSION['error_message'] = "<i class='fas fa-exclamation-circle'></i> Enter both your name and country before Submit";
         header('Location: ../index.php');
         exit();
     }
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo $response;
         //Success
-        $_SESSION['success_message'] = "Congratulations! You are now added as a user!";
+        $_SESSION['success_message'] = "<i class='fa-solid fa-check'></i> Congratulations! You are now added as a user!";
  
         //We send the user back to the frontpage
         header('Location: ../index.php');
@@ -57,4 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
+//Close curl
+curl_close($ch);
 ?>

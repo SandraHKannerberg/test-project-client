@@ -65,6 +65,23 @@ li {
 
 /* MAIN CONTENT */
 
+/* ALERT */
+.my-success-alert {
+    margin-top: 1rem;
+    border: 2px solid #379237;
+    background: #FCF8E8;
+    color: #379237;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.my-error-alert {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 /* WELCOME SECTION */
 .my-text-wrapper {
     display: flex;

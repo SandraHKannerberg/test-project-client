@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600&display=swap');
+
 .my-userlist-wrapper {
     display: flex;
     flex-direction: column;
@@ -11,13 +13,26 @@
     padding: 15rem;
   }
 
-.btn{
+.my-btn{
     width: 40px;
     height: 40px;
     border-radius: 50%;
 } 
 
+#delete-icon {
+    pointer-events: auto;
+}
+
 .my-table-content-center {
     text-align: center;
     vertical-align: middle;
 }
+
+.modal-content {
+    color: black;
+}
+
+
+/* #successAlert {
+    display: none;
+} */

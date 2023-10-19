@@ -6,7 +6,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="userList-Page.php">Users</a>
+                    <a class="nav-link active" aria-current="page" href="userlist-page.php">Users</a>
                 </li>
             </ul>
         </div>
