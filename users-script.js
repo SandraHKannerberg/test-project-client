@@ -29,7 +29,7 @@ function deleteUser(userId) {
 
         //DELETE-request to the server
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "includes/delete-endpoint.php", true);
+        xhr.open("POST", "includes/endpoints/delete.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         //String - users id

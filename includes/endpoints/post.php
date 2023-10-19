@@ -48,12 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['success_message'] = "<i class='fa-solid fa-check'></i> Congratulations! You are now added as a user!";
  
         //We send the user back to the frontpage
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
     }
 
 } else {
-    //If user tries to enter post-endpoint.php without a POST request, make them stay in the frontpage
-    header('Location: ../index.php');
+    //If user tries to enter post.php without a POST request, make them stay in the frontpage
+    header('Location: ../../index.php');
 }
 
 

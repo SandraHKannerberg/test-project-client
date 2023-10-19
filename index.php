@@ -31,7 +31,7 @@
             </div>
               
             <div class="my-form col-12 col-sm-8 col-md-6 col-lg-4">
-                <form method="post" action="includes/post-endpoint.php">
+                <form method="post" action="includes/endpoints/post.php">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
