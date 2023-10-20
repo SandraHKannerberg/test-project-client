@@ -1,4 +1,4 @@
-<table class="table table-success table-striped table-hover align-middle shadow-sm rounded">
+<table class="table table-success table-striped align-middle shadow-sm rounded">
   <thead class="table-dark">
     <tr>
       <th scope="col" class="my-table-content-center">ID</th>
@@ -9,46 +9,52 @@
     </tr>
   </thead>
   <tbody class="table-group-divider">
-
     <?php
-    //Connect to database
+    // Connect to the database
     include("includes/database/config.php");
 
-    //Get all users
+    // Get all users
     $sql = "SELECT * FROM user_table";
-
     $users = $conn->query($sql);
 
-    //Loop all users and give each user one line
+    // Loop through all users
     if ($users->num_rows > 0) {
         while ($row = $users->fetch_assoc()) {
             echo "<tr>";
-            //User details
+            // User details
             echo "<td class='my-table-content-center'>" . $row["id"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["country"] . "</td>";
 
-            //Edit button
+            // Edit button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='my-btn btn btn-dark'>";
-            echo "<i class='fa-solid fa-pen-to-square'></i>";
-            echo "</button>";
+            echo "<button type='button' class='my-btn btn btn-dark edit-button' data-bs-toggle='collapse' data-bs-target='#user-" . $row["id"] . "'><i class='fa-solid fa-pen-to-square'></i></button>";
             echo "</td>";
 
-            //Delete button
+            // Delete button
             echo "<td class='text-center'>";
-            echo "<button type='button' class='my-btn btn btn-danger delete-button' data-id='" . $row["id"] . "'>";
-            echo "<i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i>";
-            echo "</button>";
+            echo "<button type='button' class='my-btn btn btn-danger delete-button' data-id='" . $row["id"] . "'><i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i></button>";
             echo "</td>";
             echo "</tr>";
+
+            // User details accordion
+            echo '<tr>';
+            echo '<td colspan="5">';
+            echo '<div class="collapse" id="user-' . $row["id"] . '">';
+            echo '<div class="card card-body">';
+            echo 'Name: <input type="text" name="edit-name" value="' . $row["name"] . '"><br>';
+            echo 'Country: <input type="text" name="edit-country" value="' . $row["country"] . '"><br>';
+            echo '<button class="btn btn-dark editConfirm-button">Save</button>';
+            echo '</div>';
+            echo '</div>';
+            echo '</td>';
+            echo '</tr>';
         }
     } else {
-        echo "<tr><td colspan='3'>No users found in the database</td></tr>";
+        echo "<tr><td colspan='5'>No users found in the database</td></tr>";
     }
 
     $conn->close();
     ?>
-
   </tbody>
 </table>
