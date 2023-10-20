@@ -11,13 +11,16 @@
     <!-- Icons Font Awesome -->
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
     <!-- My JS script -->
-    <script src="users-script.js" defer></script>
+    <script src="script/users-script.js" defer></script>
     <title>Users</title>
 </head>
 <body>
 
     <!-- Header -->
-    <?php include("includes/header.php"); ?>
+    <?php 
+    $page = 'user';
+    include("includes/content/header.php"); 
+    ?>
 
     <!-- Modal - Confirm before delete -->
     <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
@@ -57,7 +60,7 @@
     </main>
 
     <!-- Footer -->
-    <?php include("includes/footer.php"); ?>
+    <?php include("includes/content/footer.php"); ?>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

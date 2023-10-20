@@ -59,8 +59,12 @@ li {
     justify-content: flex-end;
 }
 
-.nav-item:hover {
+.nav-link:hover {
     color: #ECB390 !important;
+}
+
+.active {
+    text-shadow: 1px 1px 2px #ECB390, 0 0 1em #DF7861, 0 0 0.2em #DF7861;
 }
 
 /* MAIN CONTENT */

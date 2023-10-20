@@ -10,12 +10,15 @@
     <!-- Icons Font Awesome -->
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
     <!-- My JS script -->
-    <script src="script.js" defer></script>
+    <script src="script/script.js" defer></script>
     <title>My test assignment</title>
 </head>
 <body>
 
-    <?php include("includes/header.php"); ?>
+    <?php 
+    $page = 'home';
+    include("includes/content/header.php"); 
+    ?>
   
     <main class="container-fluid">
         <div class="my-form-wrapper container">
@@ -65,7 +68,7 @@
         </div>
     </main>
 
-    <?php include("includes/footer.php"); ?>
+    <?php include("includes/content/footer.php"); ?>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
