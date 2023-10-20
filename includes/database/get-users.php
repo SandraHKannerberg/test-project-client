@@ -11,7 +11,7 @@
   <tbody class="table-group-divider">
     <?php
     // Connect to the database
-    include("includes/database/config.php");
+    include("includes/database/connection.php");
 
     // Get all users
     $sql = "SELECT * FROM user_table";
@@ -37,7 +37,7 @@
             echo "</td>";
             echo "</tr>";
 
-            // User details accordion
+            // User details accordion. Section for edit user details
             echo "<tr>";
             echo "<td colspan='5'>";
             echo "<div class='collapse' id='user-" . $row["id"] . "'>";
@@ -46,6 +46,8 @@
             echo "Edit country? <input class='my-update-input' type='text' name='edit-country' value='" . $row["country"] . "'><br>";
             echo "<button class='btn btn-dark editConfirm-button'>Save</button>";
             echo "</br>";
+
+            //Errormessage
             echo "<div id='error-update-" . $row["id"] . "' class='my-error-alert alert alert-danger' style='display: none;'></div>"; 
             echo "</div>";
             echo "</div>";
