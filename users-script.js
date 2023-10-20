@@ -64,7 +64,7 @@ setTimeout(function() {
 //EDIT
 document.addEventListener("DOMContentLoaded", function () {
     const editConfirmButtons = document.querySelectorAll(".editConfirm-button");
-  
+    
     editConfirmButtons.forEach(function (button) {
       button.addEventListener("click", function () {
 
@@ -72,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const userId = button.closest(".collapse").getAttribute("id").replace("user-", "");
         const userNameInput = document.querySelector("#user-" + userId + " input[name='edit-name']");
         const userCountryInput = document.querySelector("#user-" + userId + " input[name='edit-country']");
+
+        //Variable for error messages
+        const errorMessage = document.querySelector("#error-message-" + userId);
   
         if (userNameInput && userCountryInput) {
           const userName = userNameInput.value;
@@ -87,22 +90,36 @@ document.addEventListener("DOMContentLoaded", function () {
   
             // String to Quarkus - user details
             const userData = "id=" + userId + "&edit-name=" + userName + "&edit-country=" + userCountry;
-  
+
             xhr.onreadystatechange = function () {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                // Reload page after update
-                refreshPage();
-              }
-            };
+                if (xhr.readyState === 4) {
+                  if (xhr.status === 200) {
+
+                    // Reload page after update
+                    refreshPage();
+                  } else {
+                    // Display an error message
+                    errorMessage.textContent = "An error occurred. Please try again.";
+                    errorMessage.style.display = "block";
+                  }
+                }
+              };
   
             // Send the request with the string of user details
             xhr.send(userData);
-            
+              
           } else {
+            // Display an error message
             console.log("Name and Country fields can not be empty.");
+            errorMessage.textContent = "An error occurred. Name and/or Country can't be empty.";
+            errorMessage.style.display = "block";
           }
+
         } else {
+        // Display an error message
           console.log("Input fields not found or null.");
+          errorMessage.textContent = "Input fields not found or null.";
+          errorMessage.style.display = "block";
         }
       });
     });
