@@ -1,3 +1,8 @@
+//Function to reload the page
+function refreshPage() {
+  location.reload();
+}
+
 //Eventlistener delete-button
 document.querySelector("tbody").addEventListener("click", function (event) {
     if (event.target.classList.contains("delete-button")) {
@@ -46,11 +51,6 @@ function deleteUser(userId) {
         //Send POST-request
         xhr.send(data);
     });
-}
-
-//Function to reload the page
-function refreshPage() {
-    location.reload();
 }
 
 //Set a timer to hide confirmation message after 8 seconds

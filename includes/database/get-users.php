@@ -54,6 +54,7 @@ $users = $conn->query($sql);
     // Loop through all users
     if ($users->num_rows > 0) {
         while ($row = $users->fetch_assoc()) {
+            //Add a new tablerow for each user
             echo "<tr>";
             // User details
             echo "<td class='my-table-content-center'>" . $row["id"] . "</td>";
@@ -69,6 +70,8 @@ $users = $conn->query($sql);
             echo "<td class='text-center'>";
             echo "<button type='button' class='my-btn btn btn-danger delete-button' data-id='" . $row["id"] . "'><i class='fa-solid fa-trash delete-button' data-id='" . $row["id"] . "'></i></button>";
             echo "</td>";
+
+            //Close tablerow for each user
             echo "</tr>";
 
             // User details accordion. Section for edit user details
