@@ -1,8 +1,9 @@
 <?php
 session_start();
-if (isset($_POST["id"]) && isset($_POST["new_data"])) {
+if (isset($_POST["id"]) && isset($_POST["edit-name"]) && isset($_POST["edit-country"]) ) {
     $userId = $_POST["id"];
-    $newData = $_POST["new_data"]; // Användarinput
+    $name = htmlspecialchars($_POST["edit-name"]);
+    $country = htmlspecialchars($_POST["edit-country"]);
 
     // URL to Quarkus PUT-endpoint
     $putEndpoint = "http://localhost:8080/users/" . $userId;

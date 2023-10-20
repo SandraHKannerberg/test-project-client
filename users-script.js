@@ -59,3 +59,52 @@ setTimeout(function() {
     if (completedMessage) {
         completedMessage.style.display = "none";
 }}, 8000);
+
+
+//EDIT
+document.addEventListener("DOMContentLoaded", function () {
+    const editConfirmButtons = document.querySelectorAll(".editConfirm-button");
+  
+    editConfirmButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+
+        // Catch the user details when clicking the editConfirm-button
+        const userId = button.closest(".collapse").getAttribute("id").replace("user-", "");
+        const userNameInput = document.querySelector("#user-" + userId + " input[name='edit-name']");
+        const userCountryInput = document.querySelector("#user-" + userId + " input[name='edit-country']");
+  
+        if (userNameInput && userCountryInput) {
+          const userName = userNameInput.value;
+          const userCountry = userCountryInput.value;
+  
+          //Name or Country input can't be empty
+          if (userName.trim() !== "" && userCountry.trim() !== "") {
+            
+            // PUT-request to the server
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "includes/endpoints/update.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  
+            // String to Quarkus - user details
+            const userData = "id=" + userId + "&edit-name=" + userName + "&edit-country=" + userCountry;
+  
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Reload page after update
+                refreshPage();
+              }
+            };
+  
+            // Send the request with the string of user details
+            xhr.send(userData);
+            
+          } else {
+            console.log("Name and Country fields can not be empty.");
+          }
+        } else {
+          console.log("Input fields not found or null.");
+        }
+      });
+    });
+  });
+  
