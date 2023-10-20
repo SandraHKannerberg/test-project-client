@@ -32,7 +32,18 @@
     color: black;
 }
 
+.my-update-form {
+    background-color: #FCF8E8;
+}
 
-/* #successAlert {
-    display: none;
-} */
+.my-update-input {
+    background-color: #FCF8E8;
+    border: 1px solid  #ECB390;
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+.editConfirm-button {
+    text-transform: uppercase;
+}
+

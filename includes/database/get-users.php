@@ -38,17 +38,19 @@
             echo "</tr>";
 
             // User details accordion
-            echo '<tr>';
-            echo '<td colspan="5">';
-            echo '<div class="collapse" id="user-' . $row["id"] . '">';
-            echo '<div class="card card-body">';
-            echo 'Name: <input type="text" name="edit-name" value="' . $row["name"] . '"><br>';
-            echo 'Country: <input type="text" name="edit-country" value="' . $row["country"] . '"><br>';
-            echo '<button class="btn btn-dark editConfirm-button">Save</button>';
-            echo '</div>';
-            echo '</div>';
-            echo '</td>';
-            echo '</tr>';
+            echo "<tr>";
+            echo "<td colspan='5'>";
+            echo "<div class='collapse' id='user-" . $row["id"] . "'>";
+            echo "<div class='my-update-form card card-body'>";
+            echo "Edit name? <input class='my-update-input' type='text' name='edit-name' value='" . $row["name"] . "'><br>";
+            echo "Edit country? <input class='my-update-input' type='text' name='edit-country' value='" . $row["country"] . "'><br>";
+            echo "<button class='btn btn-dark editConfirm-button'>Save</button>";
+            echo "</br>";
+            echo "<div id='error-message-" . $row["id"] . "' class='my-error-alert alert alert-danger' style='display: none;'></div>"; 
+            echo "</div>";
+            echo "</div>";
+            echo "</td>";
+            echo "</tr>";
         }
     } else {
         echo "<tr><td colspan='5'>No users found in the database</td></tr>";
