@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const userCountryInput = document.querySelector("#user-" + userId + " input[name='edit-country']");
 
         //Variable for error messages
-        const errorMessage = document.querySelector("#error-message-" + userId);
+        const errorMessage = document.querySelector("#error-update-" + userId);
   
         if (userNameInput && userCountryInput) {
           const userName = userNameInput.value;

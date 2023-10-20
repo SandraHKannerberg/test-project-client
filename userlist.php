@@ -19,7 +19,7 @@
     <!-- Header -->
     <?php include("includes/header.php"); ?>
 
-    <!-- Modal - Confirmation before delete -->
+    <!-- Modal - Confirm before delete -->
     <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -41,7 +41,7 @@
     <main class="my-userlist-wrapper container-fluid" id="my-userlist">
 
         <?php
-            //Div - Alert completed
+            //Div - Alert for completed message
             session_start();
                 if (isset($_SESSION["completed_message"])) {
                     echo "<div class='my-success-alert alert alert-success' role='alert' id='completed_message'>" . $_SESSION["completed_message"] . "</div>";

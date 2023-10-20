@@ -46,7 +46,7 @@
             echo "Edit country? <input class='my-update-input' type='text' name='edit-country' value='" . $row["country"] . "'><br>";
             echo "<button class='btn btn-dark editConfirm-button'>Save</button>";
             echo "</br>";
-            echo "<div id='error-message-" . $row["id"] . "' class='my-error-alert alert alert-danger' style='display: none;'></div>"; 
+            echo "<div id='error-update-" . $row["id"] . "' class='my-error-alert alert alert-danger' style='display: none;'></div>"; 
             echo "</div>";
             echo "</div>";
             echo "</td>";
