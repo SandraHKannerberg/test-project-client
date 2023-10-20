@@ -20,7 +20,7 @@
     include("includes/content/header.php"); 
     ?>
   
-    <main class="container-fluid">
+    <main class="frontpage-wrapper container-fluid">
         <div class="my-form-wrapper container">
             <div class="row text-center">
                 <div class="my-text-wrapper col">

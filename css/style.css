@@ -68,6 +68,10 @@ li {
 }
 
 /* MAIN CONTENT */
+.frontpage-wrapper {
+    min-height: 75vh;
+    margin-top: 3rem;
+}
 
 /* ALERT */
 .my-success-alert {
@@ -108,7 +112,6 @@ li {
 /* FORM SECTION */
 .my-form-wrapper {
     width: 85vw;
-    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
