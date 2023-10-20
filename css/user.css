@@ -28,6 +28,7 @@
     vertical-align: middle;
 }
 
+/* STYLES FOR THE MODAL WITH FORM TO UPDATE USER DETAILS */
 .modal-content {
     color: black;
 }
@@ -47,3 +48,24 @@
     text-transform: uppercase;
 }
 
+/* PAGINATION */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-container .page-link {
+    color: #000; /* Text color links, not active page */
+    background-color: #fff;; /* Bakground color, not active page */
+    border: 1px solid #ccc;
+}
+
+.pagination-container .page-link:hover {
+    background-color: #eee;
+}
+
+.pagination-container .page-item.active .page-link {
+    color: #fff; /* text color, active page */
+    background-color: #000; /* Background color, active page */
+    border: 1px solid #000;
+}
