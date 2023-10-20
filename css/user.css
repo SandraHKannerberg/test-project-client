@@ -4,9 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 0;
     margin-top: 3rem;
+    min-height: 75vh;
 }
 
 .my-tablerow {
@@ -28,11 +28,44 @@
     vertical-align: middle;
 }
 
+/* STYLES FOR THE MODAL WITH FORM TO UPDATE USER DETAILS */
 .modal-content {
     color: black;
 }
 
+.my-update-form {
+    background-color: #FCF8E8;
+}
 
-/* #successAlert {
-    display: none;
-} */
+.my-update-input {
+    background-color: #FCF8E8;
+    border: 1px solid  #ECB390;
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+.editConfirm-button {
+    text-transform: uppercase;
+}
+
+/* PAGINATION */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-container .page-link {
+    color: #000; /* Text color links, not active page */
+    background-color: #fff;; /* Bakground color, not active page */
+    border: 1px solid #ccc;
+}
+
+.pagination-container .page-link:hover {
+    background-color: #eee;
+}
+
+.pagination-container .page-item.active .page-link {
+    color: #fff; /* text color, active page */
+    background-color: #000; /* Background color, active page */
+    border: 1px solid #000;
+}

@@ -1,5 +1,4 @@
 <?php
-// This page is just for the developer; it will not be shown to the user
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -11,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //Error-message sent to index.php 
         $_SESSION['error_message'] = "<i class='fas fa-exclamation-circle'></i> Enter both your name and country before Submit";
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
         exit();
     }
     
@@ -48,12 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['success_message'] = "<i class='fa-solid fa-check'></i> Congratulations! You are now added as a user!";
  
         //We send the user back to the frontpage
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
     }
 
 } else {
-    //If user tries to enter post-endpoint.php without a POST request, make them stay in the frontpage
-    header('Location: ../index.php');
+    //If user tries to enter post.php without a POST request, make them stay in the frontpage
+    header('Location: ../../index.php');
 }
 
 

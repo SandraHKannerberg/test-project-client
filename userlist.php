@@ -11,15 +11,18 @@
     <!-- Icons Font Awesome -->
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
     <!-- My JS script -->
-    <script src="users-script.js" defer></script>
+    <script src="script/users-script.js" defer></script>
     <title>Users</title>
 </head>
 <body>
 
     <!-- Header -->
-    <?php include("includes/header.php"); ?>
+    <?php 
+    $page = 'user';
+    include("includes/content/header.php"); 
+    ?>
 
-    <!-- Modal - Confirmation before delete -->
+    <!-- Modal - Confirm before delete -->
     <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -41,9 +44,8 @@
     <main class="my-userlist-wrapper container-fluid" id="my-userlist">
 
         <?php
-            //Div - Alert completed
+            //Div - Alert for completed message
             session_start();
-
                 if (isset($_SESSION["completed_message"])) {
                     echo "<div class='my-success-alert alert alert-success' role='alert' id='completed_message'>" . $_SESSION["completed_message"] . "</div>";
                     unset($_SESSION['completed_message']);
@@ -53,18 +55,17 @@
         <!-- Table - Render list of users -->
         <div class="my-table-wrapper col-sm-10 col-md-8 col-lg-6">
             <h2 class="text-center">List of users</h2>
-            <?php include("includes/get-userlist.php"); ?>
+            <?php include("includes/database/get-users.php"); ?>
         </div>
     </main>
 
     <!-- Footer -->
-    <?php include("includes/footer.php"); ?>
+    <?php include("includes/content/footer.php"); ?>
 
-    <!-- JavaScript files connected to Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
 </body>
 </html>

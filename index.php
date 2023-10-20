@@ -10,14 +10,17 @@
     <!-- Icons Font Awesome -->
     <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
     <!-- My JS script -->
-    <script src="script.js" defer></script>
+    <script src="script/script.js" defer></script>
     <title>My test assignment</title>
 </head>
 <body>
 
-    <?php include("includes/header.php"); ?>
+    <?php 
+    $page = 'home';
+    include("includes/content/header.php"); 
+    ?>
   
-    <main class="container-fluid">
+    <main class="frontpage-wrapper container-fluid">
         <div class="my-form-wrapper container">
             <div class="row text-center">
                 <div class="my-text-wrapper col">
@@ -31,7 +34,7 @@
             </div>
               
             <div class="my-form col-12 col-sm-8 col-md-6 col-lg-4">
-                <form method="post" action="includes/post-endpoint.php">
+                <form method="post" action="includes/endpoints/post.php">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
@@ -65,12 +68,13 @@
         </div>
     </main>
 
-    <?php include("includes/footer.php"); ?>
+    <?php include("includes/content/footer.php"); ?>
 
-    <!-- JavaScript files connected to Bootstrap -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-     <!-- jQuery -->
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
