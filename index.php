@@ -37,8 +37,9 @@
                 <form method="post" action="includes/endpoints/post.php">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
+                        <input type="text" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
                     </div>
+
 
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>

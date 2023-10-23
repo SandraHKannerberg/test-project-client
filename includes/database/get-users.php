@@ -6,7 +6,7 @@
 include("includes/database/connection.php");
 
 //Users per page
-$perPage = 5;
+$perPage = 10;
 
 //Count all users
 $totalUsersQuery = "SELECT COUNT(*) as total FROM user_table";
