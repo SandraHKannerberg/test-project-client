@@ -65,6 +65,12 @@
                     echo "<div class='my-error-alert alert alert-danger' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
                     unset($_SESSION["error_message"]);
                 }
+
+                if (isset($_SESSION["error_name"])) {
+                    echo "<br>";
+                    echo "<div class='my-error-alert alert alert-danger' role='alert' id='error_name'>" . $_SESSION["error_name"] . "</div>";
+                    unset($_SESSION["error_name"]);
+                }
             ?>
         </div>
     </main>
