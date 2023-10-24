@@ -33,7 +33,7 @@ if ($currentPage < 1) {
 $offset = ($currentPage - 1) * $perPage;
 
 // SQL-request to get users with pagination
-$sql = "SELECT * FROM user_table LIMIT $perPage OFFSET $offset";
+$sql = "SELECT * FROM user_table Order By name LIMIT $perPage OFFSET $offset";
 $users = $conn->query($sql);
 ?>
 
