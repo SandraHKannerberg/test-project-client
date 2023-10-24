@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $conn->query($checkQuery);
     if ($result->num_rows > 0) {
         // User already exists
-        $_SESSION["error_name"] = "Name already exists! Try again";
+        $_SESSION["error_name"] = "<i class='fas fa-exclamation-circle'></i> Name already exists! Try again";
         header("Location: ../../index.php");
         exit();
     }
