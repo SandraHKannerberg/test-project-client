@@ -60,7 +60,7 @@ li {
 }
 
 .nav-link:hover {
-    color: #ECB390 !important;
+    transform: scale(1.2);
 }
 
 .active {
