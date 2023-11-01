@@ -40,7 +40,6 @@
                         <input type="text" name="name" class="my-input form-control shadow-sm" <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
                     </div>
 
-
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
                         <input type="text" id="country" name="country" class="my-input form-control shadow-sm"  <?php if (isset($_SESSION['error_message'])) echo 'class="error-input"'; ?>>
