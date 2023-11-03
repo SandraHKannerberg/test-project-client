@@ -1,10 +1,7 @@
 <?php
-
+session_start();
 // Connect to the database
 include("../database/connection.php");
-
-session_start();
-
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 

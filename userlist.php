@@ -15,9 +15,8 @@
     <title>Users</title>
 </head>
 <body>
-
-    <!-- Header -->
     <?php 
+    session_start();
     $page = 'user';
     include("includes/content/header.php"); 
     ?>
@@ -45,7 +44,6 @@
 
         <?php
             //Div - Alert for completed message
-            session_start();
                 if (isset($_SESSION["completed_message"])) {
                     echo "<div class='my-success-alert alert alert-success' role='alert' id='completed_message'>" . $_SESSION["completed_message"] . "</div>";
                     unset($_SESSION['completed_message']);

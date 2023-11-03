@@ -14,8 +14,8 @@
     <title>My test assignment</title>
 </head>
 <body>
-
     <?php 
+    session_start();
     $page = 'home';
     include("includes/content/header.php"); 
     ?>
@@ -51,8 +51,6 @@
 
             <?php
                 //Div for error or success messages
-                session_start();
-
                 if (isset($_SESSION["success_message"])) {
                     echo "<br>";
                     echo "<div class='my-success-alert alert alert-success' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
