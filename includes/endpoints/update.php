@@ -6,7 +6,7 @@ if (isset($_POST["id"]) && isset($_POST["edit-name"]) && isset($_POST["edit-coun
     $country = htmlspecialchars($_POST["edit-country"]);
 
     // URL to Quarkus PUT-endpoint
-    $putEndpoint = "http://localhost:8080/users/" . $userId;
+    $putEndpoint = "http://quarkus-server:8080/users" . $userId;
 
     $user = array(
         'id' => $userId,

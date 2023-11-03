@@ -1,5 +1,5 @@
 <?php
-//Connect to database
+//Connect to database localhost
 // $servername = 'localhost';
 // $username = 'root';
 // $password = 'root';
@@ -13,7 +13,7 @@
 //     die("Couldn't connect to database: " . $conn->connect_error);
 // }
 
-
+//Connect to database Docker
 $conn = mysqli_connect(
     'db', # service name
     'root', # user

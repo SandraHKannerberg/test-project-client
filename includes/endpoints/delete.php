@@ -5,7 +5,7 @@ if (isset($_POST["id"])) {
 $userId = $_POST["id"];
 
 //URL to Quarkus DELETE endpoint
-$deleteEndpoint = "http://localhost:8080/users/" . $userId;
+$deleteEndpoint = "http://quarkus-server:8080/users" . $userId;
 
 //Create a curl-resurs
 $ch = curl_init();

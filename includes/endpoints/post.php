@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 // Connect to the database
 include("../database/connection.php");
 
@@ -37,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $jsonUserDto = json_encode($userDto);
 
     //POST request to Quarkus server
-    $url = "http://localhost:8080/users";
+    $url = "http://quarkus-server:8080/users";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonUserDto);
@@ -56,9 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "cURL Error: " . curl_error($ch);
     } else {
         echo $response;
+        curl_getinfo($ch, CURLINFO_HTTP_CODE);
         //Success
         $_SESSION["success_message"] = "<i class='fa-solid fa-check'></i> Congratulations! You are now added as a user!";
  
+        ob_end_flush();
         //We send the user back to the frontpage
         header("Location: ../../index.php");
     }
