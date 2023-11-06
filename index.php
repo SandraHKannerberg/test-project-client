@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,7 @@
 </head>
 <body>
     <?php 
-    session_start();
+    //session_start();
     $page = 'home';
     include("includes/content/header.php"); 
     ?>
@@ -47,28 +50,27 @@
 
                     <button type="submit" class="my-submit-btn btn shadow">Submit</button>
                 </form>
-            </div>
-
-            <?php
+                <?php
                 //Div for error or success messages
                 if (isset($_SESSION["success_message"])) {
                     echo "<br>";
-                    echo "<div class='my-success-alert alert alert-success' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
+                    echo "<div class='my-success-alert alert alert-success text-center' role='alert' id='success_message'>" . $_SESSION["success_message"] . "</div>";
                     unset($_SESSION['success_message']);
                 }
 
                 if (isset($_SESSION["error_message"])) {
                     echo "<br>";
-                    echo "<div class='my-error-alert alert alert-danger' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
+                    echo "<div class='my-error-alert alert alert-danger text-center' role='alert' id='error_message'>" . $_SESSION["error_message"] . "</div>";
                     unset($_SESSION["error_message"]);
                 }
 
                 if (isset($_SESSION["error_name"])) {
                     echo "<br>";
-                    echo "<div class='my-error-alert alert alert-danger' role='alert' id='error_name'>" . $_SESSION["error_name"] . "</div>";
+                    echo "<div class='my-error-alert alert alert-danger text-center' role='alert' id='error_name'>" . $_SESSION["error_name"] . "</div>";
                     unset($_SESSION["error_name"]);
                 }
-            ?>
+                ?>
+            </div>
         </div>
     </main>
 

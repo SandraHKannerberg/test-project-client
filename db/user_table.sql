@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Nov 03, 2023 at 09:29 AM
+-- Generation Time: Nov 06, 2023 at 09:30 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -38,8 +38,10 @@ CREATE TABLE `user_table` (
 --
 
 INSERT INTO `user_table` (`id`, `name`, `country`) VALUES
+('0af10f', 'nyaste', 'nytt'),
 ('14787d', 'Testar', 'Testar'),
 ('2a1883', 'Charlie', 'Spain'),
+('2feef0', 'nytt', 'nytt'),
 ('399a76', 'Brian', 'Denmark'),
 ('52cffc', 'Henry', 'Sweden'),
 ('5f1d22', 'Peter', 'USA'),
@@ -48,7 +50,7 @@ INSERT INTO `user_table` (`id`, `name`, `country`) VALUES
 ('9b16b0', 'Benjamin', 'Portugal'),
 ('acce89', 'Agnes', 'Portugal'),
 ('b1ad4f', 'Matthew', 'United Kingdom'),
-('dd4554', 'Kör igen', 'Sweden'),
+('dd4554', 'Köra igen', 'Sweden'),
 ('e280da', 'Lovisa', 'USA'),
 ('e6ba89', 'Sanna', 'Sweden'),
 ('ecc21c', 'Sarah', 'USA'),

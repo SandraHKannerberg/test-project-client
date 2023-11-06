@@ -1,6 +1,7 @@
 <?php
-session_start();
 ob_start();
+session_start();
+
 // Connect to the database
 include("../database/connection.php");
 
@@ -61,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //Success
         $_SESSION["success_message"] = "<i class='fa-solid fa-check'></i> Congratulations! You are now added as a user!";
  
-        ob_end_flush();
         //We send the user back to the frontpage
         header("Location: ../../index.php");
     }
