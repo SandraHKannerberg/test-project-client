@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,6 @@
 </head>
 <body>
     <?php 
-    session_start();
     $page = 'user';
     include("includes/content/header.php"); 
     ?>
