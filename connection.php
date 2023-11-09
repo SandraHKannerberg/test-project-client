@@ -1,6 +1,6 @@
 <?php
 //Connect to database from the Docker container
-$servername = '172.22.64.1';
+$servername = 'db';
 $username = 'root';
 $password = 'test';
 $database = 'test-uppgift';

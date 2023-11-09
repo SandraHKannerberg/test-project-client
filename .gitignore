@@ -1,2 +1,1 @@
-docker/client.Dockerfile
-.env
+/docker/client.Dockerfile
