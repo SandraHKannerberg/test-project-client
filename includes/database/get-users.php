@@ -3,7 +3,7 @@
  <!-- FUNCTION FOR PAGINATION -->
 <?php
 // Connect to the database
-include("includes/database/connection.php");
+include("./connection.php");
 
 //Users per page
 $perPage = 10;

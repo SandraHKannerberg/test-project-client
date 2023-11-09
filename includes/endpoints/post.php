@@ -3,7 +3,7 @@ ob_start();
 session_start();
 
 // Connect to the database
-include("../database/connection.php");
+include("../../connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $jsonUserDto = json_encode($userDto);
 
     //POST request to Quarkus server
-    $url = "http://quarkus-server:8080/users";
+    $url = "http://172.22.64.1:8080/users";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonUserDto);
