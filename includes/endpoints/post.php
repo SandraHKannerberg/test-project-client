@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $jsonUserDto = json_encode($userDto);
 
     //POST request to Quarkus server
-    $url = "http://172.22.64.1:8080/users";
+    $url = "http://backend:8080/users";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonUserDto);
